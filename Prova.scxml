@@ -1,0 +1,39 @@
+<scxml initial="S0" version="0.9" xmlns="http://www.w3.org/2005/07/scxml">
+	<state id="S0" name="Into">
+		<datamodel>
+			<data>
+				<smil>
+					<head>
+						<layout>
+							<topLayout backgroundColor="#FFFFFF" height="480px" id="win1" name="win1" title="Prova_Layout" width="640px"></topLayout>
+						</layout>
+					</head>
+					<body>
+						<img alt="boh" layout="win1" src="/home/franky/eclipse/workspace/STest2/res/Media/1.jpg" dur="1s"></img>
+					</body>
+				</smil>
+			</data>
+		</datamodel>
+		<transition event="leaderInClass" target="S1"></transition>
+		<transition event="True_hand" target="S1"></transition>
+	</state>
+
+	<state id="S1" name="Stato_2">
+		<datamodel>
+			<data>
+				<smil>
+					<head></head>
+					<body>
+						<par>							
+							<img alt="boh" id="Img1" layout="win1" src="/home/franky/eclipse/workspace/STest2/res/Media/2.jpg" dur="5s"></img>
+							<img alt="boh" id="Img2" layout="win1" src="/home/franky/eclipse/workspace/STest2/res/Media/1.jpg" dur="5s"></img>
+							<audio id="Audio1" region="full" src="/home/franky/eclipse/workspace/STest2/res/Media/beep.wav" />
+							<video id="Video1" src="/home/franky/eclipse/workspace/STest2/res/Media/Emis_CULT.mp4" region="" title="Video"/>					
+						</par>
+					</body>
+				</smil>
+			</data>
+		</datamodel>
+		<onentry>loadContent</onentry>
+	</state>
+</scxml>
