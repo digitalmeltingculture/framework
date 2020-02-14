@@ -14,16 +14,15 @@ using namespace std;
 
 #include <libxml/xmlreader.h>
 
-#include "SCXMLException.h"
-#include "TmpTransition.h"
-#include "Transition.h"
-#include "Content.h"
-#include "State.h"
-#include "Parallel.h"
-#include "Root.h"
+#include "../include/SCXMLException.h"
+#include "../include/TmpTransition.h"
+#include "../include/Transition.h"
+#include "../include/Content.h"
+#include "../include/State.h"
+#include "../include/Parallel.h"
+#include "../include/Root.h"
 
-#include "SCXMLParser.h"
-#include "SmilParser.h"
+#include "../include/SCXMLParser.h"
 
 SCXMLParser::SCXMLParser(string src){
 
@@ -32,7 +31,7 @@ SCXMLParser::SCXMLParser(string src){
 
 
     if( (docPtr = xmlReadFile(src.c_str(), NULL, 0)) == NULL)
-    	throw SCXMLException();
+     	throw SCXMLException();
 
     if( (rootNode = xmlDocGetRootElement(docPtr)) == NULL)
 		throw SCXMLException();
@@ -97,7 +96,7 @@ State* SCXMLParser::getStateFromId(list<State*> states, string id){
 }
 
 Content *SCXMLParser::parseDataNode(_xmlNode* nodePtr){
-    SmilParser smilParser;
+    /*SmilParser smilParser;
     Smil *tmpSmil = NULL;
     string tmpName;
 	Content *c;
@@ -124,6 +123,8 @@ Content *SCXMLParser::parseDataNode(_xmlNode* nodePtr){
     }
     
 	return c;
+	*/
+	return NULL;
 }
 
 Root SCXMLParser::parseRootNode(_xmlNode* nodePtr){

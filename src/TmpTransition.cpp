@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#include "TmpTransition.h"
+#include "../include/TmpTransition.h"
 
 TmpTransition::TmpTransition(string event,string target){
 	this->event = event;

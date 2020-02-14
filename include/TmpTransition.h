@@ -5,6 +5,11 @@
  *      Author: prisca-davide
  */
 
+#include<iostream>
+#include<string>
+#include<list>
+#include<map>
+
 #ifndef TMPTRANSITION_H_
 #define TMPTRANSITION_H_
 

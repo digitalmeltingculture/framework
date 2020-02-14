@@ -8,12 +8,10 @@
 #include <string>
 #include <list>
 
-#include "Content.h"
-#include "TmpTransition.h"
-#include "State.h"
-#include "Root.h"
-
-#include "Smil.h"
+#include "../include/Content.h"
+#include "../include/TmpTransition.h"
+#include "../include/State.h"
+#include "../include/Root.h"
 
 using namespace std;
 

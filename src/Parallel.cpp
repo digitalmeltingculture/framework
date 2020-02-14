@@ -11,10 +11,10 @@ using namespace std;
 #include <string>
 #include <list>
 
-#include "Content.h"
-#include "TmpTransition.h"
-#include "State.h"
-#include "Parallel.h"
+#include "../include/Content.h"
+#include "../include/TmpTransition.h"
+#include "../include/State.h"
+#include "../include/Parallel.h"
 
 Parallel::Parallel(string id){
 	this->id = id;

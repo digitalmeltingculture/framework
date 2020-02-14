@@ -1,12 +1,10 @@
-#include "ofApp.h"
-
 #include <libxml/xmlreader.h>
-#include "TmpTransition.h"
-#include "Transition.h"
-#include "Content.h"
-#include "State.h"
-#include "Root.h"
-#include "SCXMLParser.h"
+#include "../include/TmpTransition.h"
+#include "../include/Transition.h"
+#include "../include/Content.h"
+#include "../include/State.h"
+#include "../include/Root.h"
+#include "../include/SCXMLParser.h"
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -21,15 +19,19 @@ int main(int argc, char** argv ){
 
 	string s1,s2;
 
-	if(!(verificaInput(argc,argv ))) return -1;
+	// if(!(verificaInput(argc,argv ))) return -1;
 
-	Configuration* conf = Configuration::getInstance();
+	// Configuration* conf = Configuration::getInstance();
     Root root;
-    SCXMLParser parser(conf->interactionFile);
-
-    ofApp* realApp;
+    SCXMLParser parser(argv[1]);
     
 	root = parser.parse();
+	
+	cout << "Initial state: " << root.getInitialState()->getId() << endl;
+	cout << "Get state by ID: " << root.getStateById("S1")->getId() << endl;
+
+    /*
+    ofApp* realApp;
     
 	if(argc==2){
 		s1=argv[1];
@@ -47,10 +49,11 @@ int main(int argc, char** argv ){
     realApp->setup();
 
     realApp->update_new();
+    */
 
 }
 
-
+/*
 bool verificaInput(int argc, char** argv ){
 
 	string s1,s2;
@@ -94,5 +97,5 @@ bool verificaInput(int argc, char** argv ){
 		return false;
 	}
 
-}
+}*/
 

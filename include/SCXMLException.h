@@ -5,6 +5,11 @@
  *      Author: prisca-davide
  */
 
+#include<iostream>
+#include<string>
+#include<list>
+#include<map>
+
 #ifndef SCXMLEXCEPTION_H_
 #define SCXMLEXCEPTION_H_
 

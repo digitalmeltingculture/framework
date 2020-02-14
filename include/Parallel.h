@@ -4,7 +4,12 @@
  *  Created on: Nov 30, 2014
  *      Author: prisca-davide
  */
-#include <list>
+
+#include<iostream>
+#include<string>
+#include<list>
+#include<map>
+
 #ifndef PARALLEL_H_
 #define PARALLEL_H_
 

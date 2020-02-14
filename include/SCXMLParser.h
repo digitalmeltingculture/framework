@@ -5,6 +5,11 @@
  *      Author: prisca-davide
  */
 
+#include<iostream>
+#include<string>
+#include<list>
+#include<map>
+
 #ifndef SCXMLPARSER_H_
 #define SCXMLPARSER_H_
 

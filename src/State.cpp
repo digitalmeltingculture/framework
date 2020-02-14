@@ -12,11 +12,11 @@
 
 using namespace std;
 
-#include "Content.h"
-#include "Transition.h"
-#include "TmpTransition.h"
-#include "Parallel.h"
-#include "State.h"
+#include "../include/Content.h"
+#include "../include/Transition.h"
+#include "../include/TmpTransition.h"
+#include "../include/Parallel.h"
+#include "../include/State.h"
 
 State::State(string id,string type) {
 	this->id = id;

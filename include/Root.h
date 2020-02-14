@@ -5,6 +5,11 @@
  *      Author: prisca-davide
  */
 
+#include<iostream>
+#include<string>
+#include<list>
+#include<map>
+
 #ifndef ROOT_H_
 #define ROOT_H_
 

@@ -5,26 +5,29 @@
  *      Author: prisca-davide
  */
 
+#include<iostream>
+#include<string>
+#include<list>
+#include<map>
+
 #ifndef CONTENT_H_
 #define CONTENT_H_
 
-#include <string>
-
 using namespace std;
 
-class Smil;
+//class Smil;
 
 class Content {
-private:
-    Smil   *myContent;
+//private:
+    //Smil   *myContent;
     
     //static void* playContent_helper(void* );
     
 public:
 	Content();
-	 Content(Smil* smil){
+	 /*Content(Smil* smil){
 	 	this->myContent = smil;
-	 }
+	 }*/
     
 	friend ostream& operator<<(ostream&, const Content&);
 
@@ -32,13 +35,13 @@ public:
 
     void playContent();
     
-	 Smil* getSmil(){
+	 /*Smil* getSmil(){
 	 	return myContent;
 	 }
 
 	 void setSmil(Smil* smil) {
 	 	this->myContent = smil;
-	 }
+	 }*/
 };
 
 
