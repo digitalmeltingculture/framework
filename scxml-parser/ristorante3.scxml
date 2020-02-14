@@ -1,0 +1,304 @@
+<scxml initial="S0" version="0.9" xmlns="http://www.w3.org/2005/07/scxml"><!--   node-size-and-position x=0 y=0 w=990 h=710  -->
+  <state id="S0" name="Idle" type="Idle">
+     <datamodel>
+        <data>
+           <smil>
+              <head>
+                 <layout>
+                    <topLayout id="win1" name="topL1" title="Prova"   width="1100px" height="800px">
+                       <mask id="circularMask" pivotX="255" pivotY="207" width="512" height="424" src="./res/Media/circularMask.png"/>
+					   
+					   <roi id="1" roiName="roi1" top="210" left="179" width="20" height="20"></roi>
+					   <roi id="2" roiName="roi2" top="238" left="202" width="20" height="20"></roi>
+					   <roi id="3" roiName="roi3" top="266" left="230" width="20" height="20"></roi>
+					   <roi id="4" roiName="roi4" top="260" left="150" width="50" height="50"></roi>
+					   					   
+                       <region id="full" regionName="full1" fit="best-fit"  width="1100" height="800"></region>
+					   <region id="reg1" regionName="Icon1" fit="best-fit" top="388" left="366" width="38" height="38"></region>
+					   <region id="reg2" regionName="Icon2" fit="best-fit" top="443" left="410" width="38" height="38"></region>
+					   <region id="reg3" regionName="Icon3" fit="best-fit" top="497" left="464" width="38" height="38"></region>
+					   <region id="reg4" regionName="Icon4" fit="best-fit" top="550" left="280" width="100" height="100"></region> 
+	             	</topLayout>
+	             	
+	             	<topLayout id="win2" name="topL1" title="Prova"   width="1100px" height="800px">
+                       <mask id="circularMask" pivotX="255" pivotY="207" width="512" height="424" src="./res/Media/circularMask.png"/>
+					   
+					   <roi id="1" roiName="roi1" top="210" left="179" width="20" height="20"></roi>
+					   <roi id="2" roiName="roi2" top="238" left="202" width="20" height="20"></roi>
+					   <roi id="3" roiName="roi3" top="266" left="230" width="20" height="20"></roi>
+					   <roi id="4" roiName="roi4" top="260" left="150" width="50" height="50"></roi>
+					   					   
+                       <region id="full2" regionName="full2" fit="best-fit"  width="1100" height="800"></region>
+					   <region id="reg12" regionName="Icon1" fit="best-fit" top="388" left="366" width="38" height="38"></region>
+					   <region id="reg22" regionName="Icon2" fit="best-fit" top="443" left="410" width="38" height="38"></region>
+					   <region id="reg32" regionName="Icon3" fit="best-fit" top="497" left="464" width="38" height="38"></region>
+					   <region id="reg42" regionName="Icon4" fit="best-fit" top="550" left="280" width="100" height="100"></region> 
+	             	</topLayout>
+	             	    
+              </layout>
+              </head>
+              <body>
+              </body>
+           </smil>
+        </data>
+     </datamodel>
+	 <transition cond="0" event="" target="S1"></transition>
+  	 <transition cond="1" event="" target="S8"></transition> 	
+  </state>
+
+	<state id="S8" name="Intro2layout" type="Intro">
+     <datamodel>
+        <data>
+           <smil>
+              <head></head>
+              <body>		
+				  <par>
+				  		<extra id="extra1" region="full2" src="./res/Extra/main" player="main" loop="false"/>	
+				  </par> 			
+              </body>
+           </smil>        
+        </data>
+     </datamodel>
+     <onentry>loadContent</onentry>
+  </state>
+		
+  <state id="S1" name="Intro1" type="Intro">
+     <datamodel>
+        <data>
+           <smil>
+              <head></head>
+              <body>		
+				  <par>
+				   		<video id="video1" region="full" src="./res/Media/video/test1.mp4"/>
+				   		<audio id="audio1" region="full1" src="./res/Media/audio/05_-_sun_is_shining.mp3" />	
+				   		<audio id="audio2" region= "full1" src="./res/Media/audio/04_-_stand_alone.mp3" loop="false"/>
+				  </par> 			
+              </body>
+           </smil>        
+        </data>
+     </datamodel>
+     <onentry>loadContent</onentry>
+     <transition cond="0" event="peopleIn" target="S2"></transition>
+  </state>
+		
+
+<state id="S2" name="menuLingua" type="Menu">
+     <datamodel>
+        <data>
+           <smil>
+              <head></head>
+              <body>		
+				  <par>
+				   		<video id="videoTavolo" region="full" src="./res/Media/video/test1.mp4"/>
+				   		<img id="Band1InitMenu" region="reg1" src="./res/Media/en.png" />
+						<img id="Band2InitMenu" region="reg2" src="./res/Media/it.png" />
+              			<img id="IndInitMenu" 	region="reg3" src="./res/Media/indietro.png"/>	
+				   		<audio id="audio1" region="full" src="./res/Media/audio/04_-_stand_alone.mp3"/>	
+				  </par> 			
+              </body>
+           </smil>        
+        </data>
+     </datamodel>
+     
+     <parallel id="Par_menuLingua">
+		<state id="S2.1" name="Preview_Roi1" type="Preview">
+			<datamodel>
+        		<data>
+           			<smil>
+              			<head></head>
+              			<body>		
+				  			<par>
+				  				<img id="Band1Preview1" region="reg1" src="./res/Media/en2.png" />
+								<img id="Band2Preview1" region="reg2" src="./res/Media/it.png" />
+              					<img id="IndPreview1" 	region="reg3" src="./res/Media/indietro.png"/>	
+				   			</par> 			
+              			</body>
+           			</smil>        
+        		</data>
+     		</datamodel>
+     		<onentry>loadContent</onentry>
+     		<transition event="exitRoi" target="S2"></transition>
+	 		<transition cond="" event="activatedRoi" target="S3"></transition>	
+     	</state >
+     	
+     	<state id="S2.2" name="Preview_Roi2" type="Preview">
+			<datamodel>
+        		<data>
+           			<smil>
+              			<head></head>
+              			<body>		
+				  			<par>
+				   				<img id="Band1Preview2" region="reg1" src="./res/Media/en.png" />
+								<img id="Band2Preview2" region="reg2" src="./res/Media/it2.png" />
+              					<img id="IndPreview2" 	region="reg3" src="./res/Media/indietro.png"/>				   			
+				  			</par> 			
+              			</body>
+           			</smil>        
+        		</data>
+     		</datamodel>
+     		<onentry>loadContent</onentry>
+     		<transition event="exitRoi" target="S2"></transition>
+	 		<transition cond="" event="activatedRoi" target="S3"></transition>
+     	</state >
+     	
+     	<state id="S2.3" name="Preview_Roi3" type="Preview">
+			<datamodel>
+        		<data>
+           			<smil>
+              			<head></head>
+              			<body>		
+				  			<par>
+				  				<img id="Band1Preview3" region="reg1" src="./res/Media/en.png" />
+								<img id="Band2Preview3" region="reg2" src="./res/Media/it.png" />
+              					<img id="IndPreview3" 	region="reg3" src="./res/Media/indietro2.png"/>	
+				  			</par> 			
+              			</body>
+           			</smil>        
+        		</data>
+     		</datamodel>
+     		<onentry>loadContent</onentry>
+     		<transition event="exitRoi" target="S2"></transition>
+	 		<transition cond="" event="activatedRoi" target="S2"></transition>
+     	</state >	    	  	
+	</parallel>
+	 <onentry>loadContent</onentry>
+     <transition cond="1" event="transitOnRoi" target="S2.1"></transition>
+	 <transition cond="2" event="transitOnRoi" target="S2.2"></transition>
+	 <transition cond="3" event="transitOnRoi" target="S2.3"></transition> 
+  </state>	
+  
+  <state id="S3" name="menuPizza" type="Menu">
+     <datamodel>
+        <data>
+           <smil>
+              <head></head>
+              <body>		
+				  <par>
+				   		<video id="video2Init" region="full" src="./res/Media/video/test1.mp4"/>
+				   		<img id="Band1Preview1" region="reg1" src="./res/Media/bosca.png" />
+						<img id="Band2Preview1" region="reg2" src="./res/Media/capricciosa.png" />
+              			<img id="IndPreview1" 	region="reg3" src="./res/Media/indietro.png"/>	 		
+				   		<audio id="audio1Init" region="full" src="./res/Media/audio/07_-_dracula.mp3"/>	
+				  </par> 			
+              </body>
+           </smil>        
+        </data>
+     </datamodel>
+     
+     <parallel id="Par_menuLingua">
+		<state id="S3.1" name="Preview_Roi1" type="Preview">
+			<datamodel>
+        		<data>
+           			<smil>
+              			<head></head>
+              			<body>		
+				  			<par>		  				
+				  				<img id="Band1Preview1" region="reg1" src="./res/Media/bosca2.png" />
+								<img id="Band2Preview1" region="reg2" src="./res/Media/capricciosa.png" />
+              					<img id="IndPreview1" 	region="reg3" src="./res/Media/indietro.png"/>	
+				   			</par> 			
+              			</body>
+           			</smil>        
+        		</data>
+     		</datamodel>
+     		<onentry>loadContent</onentry>
+     		<transition event="exitRoi" target="S3"></transition>
+	 		<transition cond="" event="activatedRoi" target="S4"></transition>	
+     	</state >
+     	
+     	<state id="S3.2" name="Preview_Roi2" type="Preview">
+			<datamodel>
+        		<data>
+           			<smil>
+              			<head></head>
+              			<body>		
+				  			<par>
+				   				<img id="Band1Preview1" region="reg1" src="./res/Media/bosca.png" />
+								<img id="Band2Preview1" region="reg2" src="./res/Media/capricciosa2.png" />
+              					<img id="IndPreview1" 	region="reg3" src="./res/Media/indietro.png"/>					   				
+				  			</par> 			
+              			</body>
+           			</smil>        
+        		</data>
+     		</datamodel>
+     		<onentry>loadContent</onentry>
+     		<transition event="exitRoi" target="S3"></transition>
+	 		<transition cond="" event="activatedRoi" target="S4"></transition>
+     	</state >
+     	
+     	<state id="S3.3" name="Preview_Roi3" type="Preview">
+			<datamodel>
+        		<data>
+           			<smil>
+              			<head></head>
+              			<body>		
+				  			<par>
+				   				<img id="Band1Preview1" region="reg1" src="./res/Media/bosca.png" />
+								<img id="Band2Preview1" region="reg2" src="./res/Media/capricciosa.png" />
+              					<img id="IndPreview1" 	region="reg3" src="./res/Media/indietro2.png"/>			   								   				
+				  			</par> 			
+              			</body>
+           			</smil>        
+        		</data>
+     		</datamodel>
+     		<onentry>loadContent</onentry>
+     		 <transition event="exitRoi" target="S3"></transition>
+	 		 <transition cond="" event="activatedRoi" target="S2"></transition>
+     	</state >	  	
+	</parallel>
+	 <onentry>loadContent</onentry>
+     <transition cond="1" event="transitOnRoi" target="S3.1"></transition>
+	 <transition cond="2" event="transitOnRoi" target="S3.2"></transition>
+	 <transition cond="3" event="transitOnRoi" target="S3.3"></transition> 
+  </state>	
+    
+    
+  <state id="S4" name="visualizzaPizza" type="Menu">
+  	<datamodel>
+        <data>
+           	<smil>
+              	<head></head>
+              		<body>		
+				  		<par>
+				   			<video id="video1" region="full" src="./res/Media/video/test1.mp4" />
+				   			<audio id="audio1" region="full" src="./res/Media/audio/05_-_duppy_coqueror_version_4.mp3"/>
+				   			<img id="Band1Preview1" region="reg1" src="./res/Media/RoiVuota.png" />
+							<img id="Band2Preview1" region="reg2" src="./res/Media/RoiVuota.png" />
+              				<img id="IndPreview1" 	region="reg3" src="./res/Media/RoiVuota.png"/>
+              				<img id="Pizza1"        region="reg4" src="./res/Media/boscaiola.png"/>
+							
+				  		</par> 			
+              		</body>
+           		</smil>        
+        	</data>
+     	</datamodel>
+    	<parallel id="Parallel_Indietro">
+     		<state id="S4.1" name="preview_Roi4" type="Preview">
+				<datamodel>
+        			<data>
+           				<smil>
+              				<head></head>
+              				<body>		
+				  				<par>
+				   					<img id="Band1Preview1" region="reg1" src="./res/Media/RoiVuota.png" />
+									<img id="Band2Preview1" region="reg2" src="./res/Media/RoiVuota.png" />
+              						<img id="IndPreview1" 	region="reg3" src="./res/Media/RoiVuota.png"/>
+              						<img id="Pizza1"        region="reg4" src="./res/Media/pizzaEvidenziata.png"/>
+				  				</par> 			
+              				</body>
+           				</smil>        
+        			</data>
+     			</datamodel>
+     			<onentry>loadContent</onentry>
+     			<transition event="exitRoi" target="S4"></transition>
+	 		 	<transition cond="" event="activatedRoi" target="S3"></transition>
+     		</state >
+     	  	
+		</parallel> 	
+     	<onentry>loadContent</onentry>
+     	<transition cond="4" event="transitOnRoi" target="S4.1"></transition>    	
+  </state>  
+    
+    
+	
+ </scxml>

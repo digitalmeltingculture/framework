@@ -1,0 +1,41 @@
+<scxml initial="S0" version="0.9" xmlns="http://www.w3.org/2005/07/scxml"><!--   node-size-and-position x=0 y=0 w=990 h=710  -->
+  <state id="S0" name="Idle" type="Idle">
+     <datamodel>
+        <data>
+           <smil>
+              <head>
+                 <layout>
+                    <topLayout id="win1" name="topL1" title="Prova" height="551px"  width="565px">
+                       <region id="full" regionName="full" fit="best-fit"  width="565" height="551"></region>
+					   <region id="reg1" regionName="Icon1" fit="best-fit" top="17" left="344" width="56" height="57"></region>
+					   <region id="reg2" regionName="Icon2" fit="best-fit" top="103" left="393" width="56" height="57"></region>
+					   <region id="reg3" regionName="Icon3" fit="best-fit" top="149" left="484" width="56" height="57"></region>
+					</topLayout> 
+	             </layout>
+              </head>
+              <body>
+              </body>
+           </smil>
+        </data>
+     </datamodel>
+	 <transition cond="0" event="" target="S1"></transition>
+	</state>
+  
+  <state id="S1" name="Intro1" type="Intro">
+     <datamodel>
+        <data>
+           <smil>
+              <head></head>
+              <body>		
+				  <seq>
+				 	    <img id="Smile" region="full" src="./res/Media/Smile.png" />
+				 	    <img id="Nave" region="full" src="./res/Media/1.jpg" />	
+				  </seq>	
+              </body>
+           </smil>
+        </data>
+     </datamodel>
+     <onentry>loadContent</onentry>	
+  </state>
+    
+</scxml>
